@@ -14,6 +14,5 @@ The following input variables are **required** for a lambda function and do not 
 | handler | string | For Go, this is usually "main" |
 | runtime | string | For Go, this is currently "go1.x" |
 | s3_bucket | string | The S3 location for your projects lambdas |
-| s3_key | string | |
 | subnet_ids | list | The list of subnets this lambda will have access to. |
 | security_group_ids | string | The list of security groups (for networking rules) related to this lambda |
