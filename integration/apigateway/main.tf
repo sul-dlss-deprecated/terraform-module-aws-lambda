@@ -113,7 +113,7 @@ resource "aws_api_gateway_integration_response" "200" {
 }
 
 resource "aws_api_gateway_deployment" "rest_api_deployment" {
-  rest_api_id = "${module.rialto_sparql_loader_rest_api.id}"
+  rest_api_id = "${module.lambda_function.id}"
   stage_name  = "${var.environment}"
 
   depends_on = [

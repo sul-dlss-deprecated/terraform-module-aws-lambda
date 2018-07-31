@@ -1,4 +1,4 @@
-resource "aws_lambda_function" "test_lambda" {
+resource "aws_lambda_function" "lambda_function" {
   handler       = "${var.handler}"
   function_name = "${var.function_name}"
   role          = "${var.execution_role_arn}"
