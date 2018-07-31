@@ -7,7 +7,7 @@ output id {
 }
 
 output name {
-  value = "${aws_lambda_function.lambda_function.name}"
+  value = "${var.function_name}"
 }
 
 output invoke_arn {
