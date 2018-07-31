@@ -10,3 +10,7 @@ variable subnet_ids {
 }
 
 variable security_group_ids {}
+
+variable "lambda_env_vars" {
+  type = "map"
+}
