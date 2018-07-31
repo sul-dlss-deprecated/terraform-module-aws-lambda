@@ -45,13 +45,11 @@ module "lambda_function" {
   runtime            = "${var.runtime}"
   execution_role_arn = "${aws_iam_role.lambda_execution_role.arn}"           // "arn:aws:iam::418214828013:role/rialto-lambda-role-development"                      // "${aws_iam_role.rialto_lambda_role.arn}"
   s3_bucket          = "${var.project_name}-lambdas-west-${var.environment}"
-  subnet_ids         = "${var.sunet_ids}"                                    // ["subnet-01480ce1079abf928", "subnet-0c1d29d602831e4ec", "subnet-0cc143f3b95c85c82"] // "${module.vpc-us-west-2.private_subnets}"
+  subnet_ids         = "${var.subnet_ids}"                                   // ["subnet-01480ce1079abf928", "subnet-0c1d29d602831e4ec", "subnet-0cc143f3b95c85c82"] // "${module.vpc-us-west-2.private_subnets}"
   security_group_ids = "${var.security_group_ids}"
 
   lambda_env_vars = {
-    RIALTO_SNS_ENDPOINT    = "https://sns.${var.default_region}.amazonaws.com"
-    RIALTO_SPARQL_ENDPOINT = "${var.neptune_endpoint}"
-    RIALTO_TOPIC_ARN       = "${module.rialto_sns_topic.sns_topic_arn}"
+    // RIALTO_SNS_ENDPOINT    = "https://sns.${var.default_region}.amazonaws.com"  // RIALTO_SPARQL_ENDPOINT = "${var.neptune_endpoint}"  // RIALTO_TOPIC_ARN       = "${module.rialto_sns_topic.sns_topic_arn}"
   }
 }
 
