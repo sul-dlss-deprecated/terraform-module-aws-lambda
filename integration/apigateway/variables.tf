@@ -32,3 +32,5 @@ variable passthrough_behavior {
 }
 
 variable request_templates {}
+
+variable project_name {}
