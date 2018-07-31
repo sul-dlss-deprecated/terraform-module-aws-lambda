@@ -123,8 +123,8 @@ resource "aws_api_gateway_deployment" "rest_api_deployment" {
 }
 
 // BOOKMARK
-module "rialto_sparql_load_lambda_permission" {
+module "lambda_permission" {
   source        = "github.com/sul-dlss-labs/terraform-aws-lambda/permission"
-  function_arn  = "${module.rialto_sparql_loader.arn}"
+  function_arn  = "${module.lambda_function.arn}"
   execution_arn = "${aws_api_gateway_deployment.rest_api_deployment.execution_arn}"
 }
