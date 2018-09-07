@@ -5,7 +5,7 @@ variable "function_name" {}
 variable "function_arn" {}
 
 variable http_method {
-  default = "HTTP"
+  default = "POST"
 }
 
 variable authorization {
