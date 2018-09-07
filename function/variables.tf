@@ -4,6 +4,7 @@ variable "function_name" {}
 variable "handler" {}
 variable "runtime" {}
 variable "s3_bucket" {}
+variable "timeout" {}
 
 variable subnet_ids {
   type = "list"
@@ -13,4 +14,8 @@ variable security_group_ids {}
 
 variable "lambda_env_vars" {
   type = "map"
+}
+
+variable memory_size {
+  default = "1024"
 }
