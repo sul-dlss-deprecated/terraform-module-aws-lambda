@@ -27,9 +27,6 @@ variable passthrough_behavior {
 variable content_handling {
   default = "CONVERT_TO_TEXT"
 }
-variable request_templates {}
-
-variable project_name {}
 
 variable api_key_source {
   default = "HEADER"
