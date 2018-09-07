@@ -1,15 +1,8 @@
 variable "environment" {}
-variable "execution_role_arn" {}
+
 variable "function_name" {}
-variable "handler" {}
-variable "runtime" {}
-variable "s3_bucket" {}
 
-variable subnet_ids {
-  type = "list"
-}
-
-variable security_group_ids {}
+variable "function_arn" {}
 
 variable http_method {
   default = "HTTP"
@@ -20,7 +13,7 @@ variable authorization {
 }
 
 variable type {
-  default = "AWS"
+  default = "AWS_PROXY"
 } # Valid values are: "AWS", "AWS_PROXY", "HTTP", "HTTP_PROXY", or "MOCK"
 
 variable integration_method {
@@ -28,9 +21,18 @@ variable integration_method {
 }
 
 variable passthrough_behavior {
-  default = "WHEN_NO_TEMPLATES"
+  default = "WHEN_NO_MATCH"
 }
 
+variable content_handling {
+  default = "CONVERT_TO_TEXT"
+}
 variable request_templates {}
 
 variable project_name {}
+
+variable api_key_source {
+  default = "HEADER"
+}
+
+variable lambda_url {}
