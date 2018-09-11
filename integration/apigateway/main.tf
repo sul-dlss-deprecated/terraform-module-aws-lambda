@@ -44,6 +44,28 @@ resource "aws_api_gateway_method_response" "200" {
   }
 }
 
+resource "aws_api_gateway_method_response" "400" {
+  rest_api_id = "${aws_api_gateway_rest_api.rest_api.id}"
+  resource_id = "${aws_api_gateway_resource.rest_api_resource.id}"
+  http_method = "${var.http_method}"
+  status_code = "400"
+
+  response_models = {
+    "application/json" = "Empty"
+  }
+}
+
+resource "aws_api_gateway_method_response" "422" {
+  rest_api_id = "${aws_api_gateway_rest_api.rest_api.id}"
+  resource_id = "${aws_api_gateway_resource.rest_api_resource.id}"
+  http_method = "${var.http_method}"
+  status_code = "422"
+
+  response_models = {
+    "application/json" = "Empty"
+  }
+}
+
 resource "aws_api_gateway_deployment" "rest_api_deployment" {
   rest_api_id = "${aws_api_gateway_rest_api.rest_api.id}"
   stage_name  = "${var.environment}"
