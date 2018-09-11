@@ -1,2 +1,4 @@
 variable function_arn {}
-variable execution_arn {}
+variable source {}
+variable statement_id {}
+variable principal {}
