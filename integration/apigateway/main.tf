@@ -75,10 +75,3 @@ resource "aws_api_gateway_deployment" "rest_api_deployment" {
     "aws_api_gateway_integration.rest_api_integration",
   ]
 }
-
-// BOOKMARK
-module "lambda_permission" {
-  source        = "../../permission"
-  function_arn  = "${var.function_arn}"
-  execution_arn = "${aws_api_gateway_deployment.rest_api_deployment.execution_arn}"
-}
