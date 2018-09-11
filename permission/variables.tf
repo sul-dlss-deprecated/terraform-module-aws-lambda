@@ -1,4 +1,4 @@
 variable function_arn {}
-variable source {}
+variable source_arn {}
 variable statement_id {}
 variable principal {}
