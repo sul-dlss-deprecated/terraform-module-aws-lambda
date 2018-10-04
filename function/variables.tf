@@ -21,3 +21,7 @@ variable "lambda_env_vars" {
 variable memory_size {
   default = "1024"
 }
+
+variable reserved_concurrent_executions {
+  default = 0
+}
