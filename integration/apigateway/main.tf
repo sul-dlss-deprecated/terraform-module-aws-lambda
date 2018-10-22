@@ -42,6 +42,8 @@ resource "aws_api_gateway_method_response" "200" {
   response_models = {
     "application/json" = "Empty"
   }
+
+  depends_on = ["aws_api_gateway_method.rest_api_method"]
 }
 
 resource "aws_api_gateway_method_response" "400" {
@@ -53,6 +55,8 @@ resource "aws_api_gateway_method_response" "400" {
   response_models = {
     "application/json" = "Empty"
   }
+
+  depends_on = ["aws_api_gateway_method.rest_api_method"]
 }
 
 resource "aws_api_gateway_method_response" "422" {
@@ -64,6 +68,8 @@ resource "aws_api_gateway_method_response" "422" {
   response_models = {
     "application/json" = "Empty"
   }
+
+  depends_on = ["aws_api_gateway_method.rest_api_method"]
 }
 
 resource "aws_api_gateway_deployment" "rest_api_deployment" {
