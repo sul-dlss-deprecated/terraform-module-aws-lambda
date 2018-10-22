@@ -75,3 +75,26 @@ resource "aws_api_gateway_deployment" "rest_api_deployment" {
     "aws_api_gateway_integration.rest_api_integration",
   ]
 }
+
+// Usage plans are required for API keys to work. For now, we won't set any quota
+// or throttling limits.
+resource "aws_api_gateway_usage_plan" "api_usage_plan" {
+  name         = "${var.function_name}-${var.environment}-usage-plan"
+  description  = "Usage plan (required in order to use API keys)"
+
+  api_stages {
+    api_id = "${aws_api_gateway_rest_api.rest_api.id}"
+    stage  = "${var.environment}"
+  }
+
+}
+
+resource "aws_api_gateway_api_key" "api_key" {
+  name = "${var.function_name}-${var.environment}-api-key"
+}
+
+resource "aws_api_gateway_usage_plan_key" "usage_plan_key" {
+  key_id        = "${aws_api_gateway_api_key.api_key.id}"
+  key_type      = "API_KEY"
+  usage_plan_id = "${aws_api_gateway_usage_plan.api_usage_plan.id}"
+}
