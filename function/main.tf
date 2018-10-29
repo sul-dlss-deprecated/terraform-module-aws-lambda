@@ -4,8 +4,7 @@ resource "aws_lambda_function" "lambda_function" {
   memory_size                    = "${var.memory_size}"
   role                           = "${var.execution_role_arn}"
   runtime                        = "${var.runtime}"
-  s3_bucket                      = "${var.s3_bucket}"
-  s3_key                         = "${var.function_name}-${var.environment}/lambda.zip"
+  filename                       = "${var.filename}"
   timeout                        = "${var.timeout}"
   reserved_concurrent_executions = "${var.reserved_concurrent_executions}"
 

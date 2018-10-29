@@ -3,7 +3,7 @@ variable "execution_role_arn" {}
 variable "function_name" {}
 variable "handler" {}
 variable "runtime" {}
-variable "s3_bucket" {}
+variable "filename" {}
 variable "timeout" {}
 
 variable subnet_ids {
