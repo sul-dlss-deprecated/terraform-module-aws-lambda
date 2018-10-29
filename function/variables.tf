@@ -4,6 +4,9 @@ variable "function_name" {}
 variable "handler" {}
 variable "runtime" {}
 variable "filename" {}
+
+variable "source_code_hash" {}
+
 variable "timeout" {}
 
 variable subnet_ids {

@@ -5,6 +5,7 @@ resource "aws_lambda_function" "lambda_function" {
   role                           = "${var.execution_role_arn}"
   runtime                        = "${var.runtime}"
   filename                       = "${var.filename}"
+  source_code_hash               = "${var.source_code_hash}"
   timeout                        = "${var.timeout}"
   reserved_concurrent_executions = "${var.reserved_concurrent_executions}"
 
