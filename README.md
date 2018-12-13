@@ -12,6 +12,7 @@ The following input variables are **required** for a lambda function and do not 
 | function_name | string | The function name of the lamba. **Note**: do not include the environment in the function_name, it will be appended automatically. ||
 | memory_size | string | Amount of memory to allocate to the lambda | 1024 |
 | environment | string | The environment being deployed to (prod/stage/dev) ||
+| project | string | Name of the project for tagging||
 | execution_role_arn | string | The ARN of the execution run for this lambda||
 | runtime | string | For Go, this is currently "go1.x" ||
 | s3_bucket | string | The S3 location for your projects lambdas, must be in the same region ||

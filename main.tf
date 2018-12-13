@@ -1,4 +1,5 @@
 variable "environment" {}
+variable "project"     {}
 
 /*====
 Lambda execution role
@@ -21,6 +22,11 @@ resource "aws_iam_role" "lambda_execution_role" {
   ]
 }
 EOF
+
+  tags {
+    terraform = "true"
+    project   = "${var.project}"
+  }
 }
 
 output "execution_role_arn" {

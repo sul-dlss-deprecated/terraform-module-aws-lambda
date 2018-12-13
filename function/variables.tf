@@ -1,4 +1,5 @@
 variable "environment" {}
+variable "project" {}
 variable "execution_role_arn" {}
 variable "function_name" {}
 variable "handler" {}
