@@ -1,6 +1,11 @@
 data "aws_s3_bucket_object" "lambda" {
   bucket = "${var.s3_bucket}"
   key    = "${var.function_name}-${var.environment}/lambda.zip"
+
+  tags {
+    terraform = "true"
+    project   = "${var.project}"
+  }
 }
 
 resource "aws_lambda_function" "lambda_function" {
@@ -22,5 +27,10 @@ resource "aws_lambda_function" "lambda_function" {
 
   environment {
     variables = "${var.lambda_env_vars}"
+  }
+
+  tags {
+    terraform = "true"
+    project   = "${var.project}"
   }
 }
