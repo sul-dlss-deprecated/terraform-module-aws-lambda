@@ -26,3 +26,5 @@ variable memory_size {
 variable reserved_concurrent_executions {
   default = 0
 }
+
+variable dead_letter_queue {}

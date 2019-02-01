@@ -29,6 +29,10 @@ resource "aws_lambda_function" "lambda_function" {
     variables = "${var.lambda_env_vars}"
   }
 
+  dead_letter_config {
+    target_arn = "{$var.dead_letter_queue}"
+  }
+
   tags {
     terraform = "true"
     project   = "${var.project}"
