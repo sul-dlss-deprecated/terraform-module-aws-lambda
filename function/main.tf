@@ -30,7 +30,7 @@ resource "aws_lambda_function" "lambda_function" {
   }
 
   dead_letter_config {
-    target_arn = "{$var.dead_letter_queue}"
+    target_arn = "${var.dead_letter_queue}"
   }
 
   tags {
